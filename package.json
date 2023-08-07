@@ -1,5 +1,5 @@
 {
-  "name": "sleepshop",
+  "name": "locoblog",
   "version": "1.0.0",
   "description": "A sleep tracking application that you can earn rewards from",
   "main": "server.js",
@@ -32,7 +32,7 @@
     "fullcalendar": "^6.1.8",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.32.1"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
