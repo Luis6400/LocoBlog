@@ -5,16 +5,16 @@ const deletebut = document.getElementById('deletebut');
 const butdata = updatebut.getAttribute('data');
 
 updatebut.addEventListener('click', async () => {
-    if (!titleinp.value && !contentinp.value) {
-        console.log('Please enter a title and content');
-        return;
-    }
+    var passed = false;
+    if (titleinp.value !== '') {
+        
+    
     await fetch('/api/editpost', {
         method: 'PUT',
         body: JSON.stringify({
             post_title: titleinp.value,
-            post_content: contentinp.value,
-            
+            postid: butdata,
+
 
         }),
         headers: {
@@ -24,7 +24,7 @@ updatebut.addEventListener('click', async () => {
     .then((response) => {
         if (response.ok) {
             console.log('Success in updating post');
-            window.location.reload();
+            passed = true;
         }
         else {
             console.log(response);
@@ -34,7 +34,37 @@ updatebut.addEventListener('click', async () => {
     .catch((error) => {
         console.error( error);
     }
-    );
+    );}
+
+    if (contentinp.value !== '') {
+        await fetch('/api/editpost', {
+            method: 'PUT',
+            body: JSON.stringify({
+                post_content: contentinp.value,
+                postid: butdata,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((response) => {
+            if (response.ok) {
+                console.log('Success in updating post');
+                passed = true;
+            }
+            else {
+                console.log(response);
+            }
+        })
+        
+        .catch((error) => {
+            console.error( error);
+        }
+        );
+    }
+    if (passed){
+        window.location.reload();
+    }
     
 
 });
@@ -42,6 +72,9 @@ updatebut.addEventListener('click', async () => {
 deletebut.addEventListener('click', async () => {
     await fetch('/api/deletepost', {
         method: 'DELETE',
+        body: JSON.stringify({
+            postid: butdata,
+        }),
         headers: {
             'Content-Type': 'application/json',
         },
@@ -63,3 +96,5 @@ deletebut.addEventListener('click', async () => {
 
 }
 );
+
+ 
