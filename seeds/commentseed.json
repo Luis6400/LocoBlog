@@ -1,9 +1,7 @@
 [
     {
-        "id": 0,
-        "comment_userid": 0,
-        "comment_postid": 0,
-        "comment_author": "admin",
+        "comment_userid": 1,
+        "comment_postid": 1,
         "comment_content": "这是一条评论",
         "comment_time": "2019-01-01 00:00:00"
 

@@ -1,7 +1,6 @@
 [
     {
-        "id": 0,
         "user_name": "admin",
-        "password": "admin"
+        "user_password": "adminadmin"
     }
 ]

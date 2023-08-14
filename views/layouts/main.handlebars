@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LocoBlog</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/app.css">
 </head>
 
-<body>
+<body class="comcard">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item is-primary" href="/">
@@ -25,11 +26,11 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a href="/" class="navbar-item">
           Home
         </a>
 
-        <a class="navbar-item">
+        <a href="/dashboard" class="navbar-item">
           Dashboard
         </a>
 
@@ -41,9 +42,16 @@
             <a href="/newpost" class="button is-light">
               New Post
             </a>
-            <a class="button is-primary">
+            {{#if logged_in}}
+            <a id="logout" class="button is-primary">
+              Log out
+            </a>
+            {{else}}
+            <a href="/login" class="button is-primary">
               Log in
             </a>
+            {{/if}}
+            
           </div>
         </div>
       </div>
@@ -53,5 +61,6 @@
 
   {{{body}}}
 </body>
+<script src="/logout.js"></script>
 
 </html>

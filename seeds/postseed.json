@@ -1,10 +1,8 @@
 [
     {
-        "id": 0,
-        "post_userid": 0,
-        "post_author": "admin",
+        "post_userid": 1,
         "post_title": "Hello World",
         "post_content": "This is my first post",
-        "post_date": "2019-01-01 00:00:00"
+        "post_date": "2019-01-01"
     }
 ]

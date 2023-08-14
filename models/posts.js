@@ -18,14 +18,6 @@ Posts.init({
             key: 'id'
         }
     },
-    post_author: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        references: {
-            model: 'users',
-            key: 'user_name'
-        }
-    },
     post_title: {
         type: DataTypes.STRING,
         allowNull: false

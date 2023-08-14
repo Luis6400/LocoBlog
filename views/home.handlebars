@@ -1,7 +1,13 @@
 <div class="container">
-
+    {{#if logged_in}}
 {{#each postdata as |postdata|}}
 {{> post postdata=postdata }}
 {{/each}}
+{{else}}
+{{#each postdata as |postdata|}}
+{{> postnl postdata=postdata }}
+{{/each}}
+{{/if}}
+<script src="/home.js"></script>
 
 </div>

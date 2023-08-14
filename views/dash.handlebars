@@ -1,0 +1,20 @@
+<div class="card m-4">
+    <p class="is-4">My Posts</p>
+</div>
+<div class="container m-4">
+    <a class="button is-centered is-primary" href="/settings">Settings</a>
+</div>
+
+<div class="container">
+    {{#if logged_in}}
+    {{#each postdata as |postdata|}}
+    {{> post postdata=postdata }}
+    {{/each}}
+    {{else}}
+    {{#each postdata as |postdata|}}
+    {{> postnl postdata=postdata }}
+    {{/each}}
+    {{/if}}
+    <script src="/home.js"></script>
+
+</div>
