@@ -7,6 +7,7 @@ const { getUsername, getMainFeed, getMyFeed, getOnePost } = require('../../utils
 router.get('/', async (req, res) => {
     try {
         const postdata = await getMainFeed();
+        postdata.reverse();
         const logcheck = req.session.logged_in;
         
         res.render('home', {logged_in: req.session.logged_in, layout: 'main', postdata });
