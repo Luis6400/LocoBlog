@@ -1,3 +1,13 @@
+{{#if postdata.post.post_mine }}
+<div class="m-4 card comcard">
+    <input type="text" class="input" placeholder="Update Title" id="titleinp">
+    <input type="text" class="input" placeholder="Update Content" id="contentinp">
+    <button data={{postdata.post.id}} class="button is-primary" id="updatebut">Update</button>
+    <button class="button is-danger" id="deletebut">Delete Post</button>
+    <script src="/onepost.js"></script>
+</div>
+{{/if}}
+
 <div class="m-2 card">
     <div class="card-header">
         <h2 class="is-size-4">{{postdata.post.post_title}}</h2>
@@ -35,12 +45,3 @@
     
 
 </div>
-{{#if postdata.post.post_mine }}
-<div class="m-2 card">
-    <input type="text" class="input" placeholder="Update Title" id="titleinp">
-    <input type="text" class="input" placeholder="Update Content" id="contentinp">
-    <button data={{postdata.post.id}} class="button is-primary" id="updatebut">Update</button>
-    <button class="button is-danger" id="deletebut">Delete</button>
-    <script src="/onepost.js"></script>
-</div>
-{{/if}}

@@ -1,6 +1,9 @@
 <div class="m-2 card">
     <div onclick={clickpost({{postdata.post.id}})} class="card-header">
         <h2 class="is-size-4">{{postdata.post.post_title}}</h2>
+        <div class="navbar-end">
+            <a onclick={clickpost({{postdata.post.id}})} href="#" class="button is-primary">Go To Post</a>
+        </div>
         
     </div>
     <div class="card-content">
