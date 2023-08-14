@@ -6,8 +6,8 @@ signupbutton.addEventListener('click', async () => {
     await fetch('/api/signup', {
         method: 'POST',
         body: JSON.stringify({
-            username: usernameinput.value,
-            password: passwordinput.value,
+            username: usernameinp.value,
+            password: passwordinp.value,
         }),
         headers: {
             'Content-Type': 'application/json',
